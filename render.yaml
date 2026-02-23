@@ -10,7 +10,7 @@ services:
     name: project0
     runtime: python
     buildCommand: './build.sh'
-    startCommand: 'python -m gunicorn core.asgi:application -k uvicorn.workers.UvicornWorker'
+    startCommand: 'gunicorn core.wsgi:application --bind 127.0.0.1:8000 --workers 3'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
