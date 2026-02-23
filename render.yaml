@@ -9,6 +9,7 @@ services:
     plan: free
     name: project0
     runtime: python
+    rootDir: src
     buildCommand: './build.sh'
     startCommand: 'gunicorn core.wsgi:application --bind 127.0.0.1:8000 --workers 3'
     envVars:
